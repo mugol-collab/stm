@@ -15,6 +15,19 @@
  *                        opensource.org/licenses/BSD-3-Clause
  *
  ******************************************************************************
+ * Programa : 001HelloWorld
+ * Propósito: - Utilizar el protocolo SWV (Serial Wired Communication) para
+ *              imprimir mensajes por pantalla.
+ *            - Para esto se utiliza el pin SWO (Serial Wired Output) que
+ *              comunica el circuito de depuración ST-Link con el procesador.
+ *            - La interface de comunicación es SWD (Serial Wired Debug), a
+ *              two-wired protocol que utiliza 2 pines (debug) + 1 pin (Trace),
+*				que está conectado a la unidad ITM del procesador y permite entre
+*				otras funciones, programar la memoria FLASH, acceder a diferentes
+*				regiones de memoria, agregar beakpoints, etc, es decir, permite
+*				hablar con el procesador.
+ *            - la libreria printf de C, realiza una llamada a la función write
+ *              implementada en syscalls.c
  */
 
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
@@ -25,7 +38,7 @@
 
 int main(void)
 {
-	printf("Hello World!\n");
+	printf("Hello STM World!\n");
     /* Loop forever */
 	for(;;);
 }

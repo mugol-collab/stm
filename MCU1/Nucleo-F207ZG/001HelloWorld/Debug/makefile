@@ -45,8 +45,8 @@ OBJCOPY_BIN += \
 all: 001HelloWorld.elf secondary-outputs
 
 # Tool invocations
-001HelloWorld.elf: $(OBJS) $(USER_OBJS) /media/sf_D_DRIVE/E-learning/STM/MCU1/Nucleo-F207ZG/001HelloWorld/STM32F207ZGTX_FLASH.ld
-	arm-none-eabi-gcc -o "001HelloWorld.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"/media/sf_D_DRIVE/E-learning/STM/MCU1/Nucleo-F207ZG/001HelloWorld/STM32F207ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="001HelloWorld.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+001HelloWorld.elf: $(OBJS) $(USER_OBJS) D:\E-learning\STM\MCU1\Nucleo-F207ZG\001HelloWorld\STM32F207ZGTX_FLASH.ld
+	arm-none-eabi-gcc -o "001HelloWorld.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\E-learning\STM\MCU1\Nucleo-F207ZG\001HelloWorld\STM32F207ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="001HelloWorld.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
