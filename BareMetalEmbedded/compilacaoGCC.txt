@@ -1,0 +1,25 @@
+Opções de compilação GNU GCC
+https://gcc.gnu.org/onlinedocs/gcc-10.2.0/gcc/#toc-GCC-Command-Options
+
+
+> Gerar arquivo .o 
+
+$ arm-none-eabi-gcc -c -mcpu=cortex-m3 -mthumb main.c -o main.o
+
+onde:
+
+-c
+ Compile or assemble the source files, but do not link
+
+-mcpu=name[+extension…]
+ specifies the name of the target ARM processor
+
+-mthumb 
+ Generating code that executes Thumb states
+
+> Gerar arquivo .s (assembly file)
+
+$ arm-none-eabi-gcc -S -mcpu=cortex-m3 -mthumb main.c -o main.s
+
+-S
+ Stop after the stage of compilation proper; Generate assembly file from .c file
